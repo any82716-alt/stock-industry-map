@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 產業鏈股票地圖</title>
+<style>
+:root{--bg:#f6f8fb;--panel:#fff;--text:#172033;--muted:#667085;--border:#e4e7ec;--accent:#2563eb;--accent-bg:#eff6ff;--buy:#c62828;--sell:#15803d}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif}
+header{background:linear-gradient(135deg,#111827,#1e3a5f);color:#fff;padding:28px 20px} .wrap{max-width:1220px;margin:auto}
+h1{margin:0 0 8px;font-size:28px} header p{margin:0;color:#dbeafe;line-height:1.6}
+.toolbar{max-width:1220px;margin:16px auto;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap}
+input,select{background:#fff;border:1px solid var(--border);border-radius:11px;padding:12px 14px;font-size:16px;color:var(--text)} input{flex:1;min-width:230px} select{min-width:160px}
+.status{max-width:1220px;margin:0 auto 14px;padding:0 20px;font-size:13px;color:var(--muted)}
+main{max-width:1220px;margin:auto;padding:0 20px 40px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:18px}
+nav{background:#fff;border:1px solid var(--border);border-radius:15px;padding:9px;height:max-content;position:sticky;top:12px}
+.navbtn{width:100%;border:0;background:transparent;padding:11px;border-radius:9px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;gap:8px}
+.navbtn.active{background:var(--accent-bg);color:var(--accent);font-weight:700}
+.hero,.card{background:#fff;border:1px solid var(--border);border-radius:15px} .hero{padding:18px;margin-bottom:14px}
+.hero h2{margin:0 0 7px;font-size:21px} .hero p{margin:0;color:var(--muted);line-height:1.7} .cat{margin-top:10px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px} .card{padding:16px}
+.top{display:flex;justify-content:space-between;gap:8px} .name{font-size:18px;font-weight:800} .code{font-size:12px;color:var(--muted);margin-left:6px}
+.role{font-size:13px;color:var(--muted);margin-top:4px} .adv{font-size:14px;line-height:1.65;margin-top:10px}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:13px;padding-top:12px;border-top:1px solid var(--border)}
+.metric{background:#f8fafc;border-radius:10px;padding:9px;min-width:0} .mlabel{font-size:11px;color:var(--muted)} .mval{font-size:14px;font-weight:800;margin-top:3px;white-space:nowrap}
+.buy{color:var(--buy)} .sell{color:var(--sell)} .neutral{color:var(--muted)} .trend{font-size:12px;margin-top:8px;color:var(--muted)}
+.footer{max-width:1220px;margin:auto;padding:0 20px 28px;font-size:12px;color:var(--muted);line-height:1.7} .empty{display:none;background:#fff;border:1px dashed var(--border);padding:35px;text-align:center;border-radius:15px}
+@media(max-width:800px){main{grid-template-columns:1fr}nav{position:static;display:flex;overflow-x:auto}.navbtn{width:auto;min-width:max-content}.grid{grid-template-columns:1fr}.chips{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>AI 產業鏈股票地圖</h1><p>產業基本面 × 每日投信籌碼。投信資料由網站排程更新，數值以「張」顯示。</p></div></header>
+<div class="toolbar">
+<input id="search" type="search" placeholder="搜尋：強茂、MOSFET、CoWoS、MLCC…">
+<select id="sort">
+<option value="default">原產業順序</option>
+<option value="d1">今日投信買超</option>
+<option value="d5">近 5 日投信買超</option>
+<option value="d20">近 20 日投信買超</option>
+</select>
+</div>
+<div class="status" id="status">投信資料載入中…</div>
+<main><nav id="nav"></nav><section><div class="hero" id="hero"></div><div class="grid" id="grid"></div><div class="empty" id="empty">找不到符合條件的股票。</div></section></main>
+<div class="footer"><strong>資料說明：</strong>產業與公司優勢來自原始產業趨勢 PDF 的整理；投信買賣超為自動更新資料。正數＝買超、負數＝賣超。台股慣例採紅色表示買超、綠色表示賣超。非台灣上市櫃或無有效代號的公司不顯示投信數據。本頁僅供研究參考，不構成投資建議。</div>
+<script src="./data/institutional.js"></script>
+<script>
+const industries=[{"id": "cleanroom", "name": "無塵室 / 廠務", "icon": "🏭", "summary": "受惠先進製程與海外晶圓廠擴產。原 PDF 強調 Arizona 廠務成本顯著高於台灣，且訂單由既有核心供應商向二線工程商外溢。", "catalyst": "台積電資本支出、Arizona / Fab21 / Fab22 進場、合約負債上升", "stocks": [["6826", "和淞", "半導體廠務工程", "台積電既有核心廠務供應鏈，具先進製程建廠經驗。"], ["6944", "兆聯實業", "水務 / 廠務工程", "既有晶圓廠廠務供應鏈，可直接受惠先進製程建廠。"], ["6196", "帆宣", "廠務整合 / 自動化工程", "既有一線供應鏈地位，受惠全球晶圓廠擴建。"], ["6139", "亞翔", "無塵室 / 機電工程", "本輪需求強勁帶動訂單由一線廠商外溢，成為新增受惠者。"], ["6691", "洋基工程", "無塵室 / 機電工程", "受惠台積電及其他半導體、記憶體、封測與資料中心擴產。"]]}, {"id": "equipment", "name": "半導體 / PCB 設備", "icon": "⚙️", "summary": "CoWoS 持續擴產，2027 起 SoIC 重要性提高，之後再加入 CoPoS。SoIC / CoPoS 對潔淨度與精密度要求更高，設備資本密集度也提高。", "catalyst": "CoWoS、SoIC、Hybrid Bonding、CoPoS、EMIB-T、PCB / ABF 擴產", "stocks": [["3131", "弘塑", "濕製程設備", "已切入先進封裝；SoIC 的 Hybrid Bonding 需要大量高潔淨濕製程，受惠站點增加。"], ["3583", "辛耘", "先進封裝設備", "CoWoS 既有合作設備商，可延續受惠後續擴產。"], ["2467", "志聖", "熱製程 / 先進封裝設備", "CoWoS、SoIC 相關製程皆具受惠機會。"], ["6640", "均華", "先進封裝設備", "既有 CoWoS 設備合作廠，受惠產能擴張。"], ["6187", "萬潤", "先進封裝自動化設備", "既有先進封裝供應鏈位置，受惠 CoWoS / SoIC 擴產。"], ["", "倍利科", "先進封裝檢測設備", "已切入製程檢測站點，設備需求隨產能建置增加。"], ["3455", "由田", "檢測設備", "已切入相關檢測站點，受惠先進封裝產能增加。"], ["", "政美應用", "檢測設備", "已切入製程站點，受惠新產線設備需求。"], ["6937", "天虹", "PVD 鍍膜設備", "310×310mm FOPLP 方形封裝進度領先，有機會藉此切入更多 CoWoS 站點。"], ["", "敘豐", "ABF / EMIB-T 濕製程設備", "濕製程是 EMIB-T 關鍵瓶頸，設備單價高且需求量可能大。"], ["", "長廣", "高噸數壓膜設備", "受惠 ABF 載板與內嵌式載板擴產。"], ["6664", "群翊", "內層塗佈 / 烘烤設備", "PDF 指出產能滿載，楊梅二廠開出後有下一波成長動能。"], ["2464", "盟立", "自動化設備", "欣興擴廠即可受惠，自動化設備需求具高度連動性。"], ["3563", "牧德", "PCB AOI 檢測", "受惠勝宏、臻鼎等大客戶擴產，並開始切入載板新站點。"], ["2493", "揚博", "HDI 濕製程設備", "2026–2027 受惠客戶 HDI 擴產，PDF 指出訂單能見度已達 2027。"], ["8021", "尖點", "PCB 鑽孔相關", "AI 伺服器板層數提高，帶動鑽孔需求增加。"], ["3167", "大量", "PCB 鑽孔設備", "同樣受惠 AI 伺服器板材層數與鑽孔量增加。"], ["8027", "鈦昇", "TGV 雷射改質設備", "玻璃核心載板的 TGV 雷射改質主要供應商之一。"], ["3055", "蔚華科", "玻璃核心載板檢測", "TGV、蝕刻、電鍍等多站需要檢測，具多站點受惠特性。"]]}, {"id": "pcb", "name": "PCB / ABF 載板", "icon": "🧩", "summary": "GPU / ASIC 面積與層數增加，加上 EMIB-T 初期良率偏低，會消耗更多 ABF 載板產能，帶動後續擴產。", "catalyst": "AI Server HLC / HDI、EMIB-T、ABF 載板、海外擴產", "stocks": [["3037", "欣興", "ABF 載板", "PDF 指出台系擴產速度最快，且楊梅已有 EMIB 相關產能。"], ["3189", "景碩", "ABF 載板", "積極擴產，受惠 GPU / ASIC 載板層數與面積提升。"], ["4958", "臻鼎-KY", "HDI / HLC / FPC / 載板", "多廠區同步擴產，產品線廣、擴產幅度大。"], ["2368", "金像電", "AI Server PCB / HLC", "台灣、泰國、蘇州持續擴產，直接受惠 AI Server 高多層板需求。"], ["", "勝宏", "HLC / HDI", "大幅增加資本支出，積極擴充 AI 相關 PCB 產能。"], ["", "WUS", "高多層板 / mSAP", "以高多層板擴產為主，直接受惠 AI Server 板層數提升。"], ["", "DY", "HLC / HDI / mSAP", "PDF 認為是轉型最明顯公司之一，由車用、記憶體板轉向 AI Server 與光模組相關板。"]]}, {"id": "odm", "name": "AI Server 零組件", "icon": "🖥️", "summary": "GB200 → GB300 → VR200 的單顆晶片與整櫃功耗快速提升，使散熱、冷板、QD、CDU、Power Rack 與 BBU 的單機價值量同步上升。", "catalyst": "VR200、全水冷、Power Rack、BBU 標配、800V HVDC", "stocks": [["2308", "台達電", "電源 / SST / Power Rack", "SST 進度領先且較早取得安規；受惠 800V HVDC 與高功率電源架構。"], ["3211", "順達", "BBU", "台達主要 BBU 供應商之一。"], ["4931", "新盛力", "BBU", "受惠 BBU 由選配走向標配。"], ["6781", "AES-KY", "BBU / 備援電源", "AWS TR3 備援設計相關供應鏈。"], ["6715", "嘉基", "光引擎 Socket", "Coherent NPO 方案採用可插拔光引擎 Socket，兼顧高密度與維修性。"]]}, {"id": "optical", "name": "光通訊", "icon": "🔦", "summary": "800G 仍是 2026–2027 主流，1.6T 預計 2027 大規模放量，之後往 3.2T；高階 EML、CW Laser、PD、DSP 與先進封裝測試價值提升。", "catalyst": "800G → 1.6T → 3.2T、CPO、NPO、OCS", "stocks": [["3081", "聯亞", "CW Laser / 光通訊 InP", "位於高速光模組與未來 CPO 外部光源供應鏈，受惠高功率 CW Laser 需求。"], ["4991", "環宇-KY", "CW Laser / Photo Detector", "同時布局 CW Laser 與 PD，能受惠高速光模組多個關鍵元件。"], ["2455", "全新", "CW Laser / Photo Detector", "同時出現在 CW Laser 與 PD 供應鏈名單，受惠 InP 需求提高。"], ["3105", "穩懋", "Photo Detector", "切入 PD 相關供應鏈，可受惠高速光通訊升級。"], ["4971", "IET-KY", "Photo Detector", "位於 PD 供應鏈，受惠高速規格演進。"], ["2345", "智邦", "網通 / OCS 布局", "PDF 特別點名台廠可關注其 OCS 布局。"], ["6285", "啟碁", "網通 / OCS 布局", "同樣被 PDF 點名具有 OCS 布局機會。"]]}, {"id": "passive", "name": "被動元件", "icon": "🔋", "summary": "AI 伺服器功耗提高，帶動 MLCC、Hybrid 鋁電容、牛角電容與功率電感用量和規格同步升級；部分高容值 MLCC 與鋁電容已出現供需吃緊。", "catalyst": "高容值 MLCC、Hybrid 電容、牛角電容、800V HVDC、TLVR", "stocks": [["2327", "國巨", "MLCC", "已切入 VR200 主板 22µF 等規格；在全球 MLCC 產能中具規模。"], ["2492", "華新科", "MLCC", "已切入 VR200 主板相關高容值產品。"], ["3026", "禾伸堂", "MLCC", "已切入 AI Server 多種 MLCC 規格。"], ["6173", "信昌電", "高壓大容值 MLCC", "推出 Mega CAP MLCC，以堆疊製程提升容值，鎖定 HVDC 高壓需求。"], ["3357", "臺慶科", "功率電感", "與台達合作開發 HVDC 功率電感；規格升級帶動單價提高。"], ["2472", "立隆電", "Hybrid / Polymer / 牛角電容", "PDF 指出在 VR200 多種鋁電容規格皆有切入，部分料號為主要供應角色。"], ["6449", "鈺邦", "Polymer / AP-CAP / V-chip", "產品對標 Panasonic SP-CAP，受惠日系減產、漲價與轉單。"], ["8042", "金山電", "牛角電容", "已被電源供應鏈導入以滿足 AI PSU 需求，受惠 second-source 機會。"]]}, {"id": "power", "name": "功率半導體", "icon": "⚡", "summary": "Nexperia 事件、供應鏈重組與海外 IDM 將產能轉向高階 AI / SiC，造成成熟功率元件供給收縮，台廠同時受惠轉單與漲價。", "catalyst": "Nexperia 轉單、漲價、18kW PSU、800V HVDC、DrMOS、SiC / GaN", "stocks": [["2481", "強茂", "二極體 / TVS / 小訊號 MOSFET / Power MOSFET", "與 Nexperia 產品重疊度高，且具自有晶圓與封裝產能，較容易承接替代需求並切入伺服器 MOSFET。"], ["5425", "台半", "二極體 / TVS / 小訊號 MOSFET", "與 Nexperia 產品重疊度高、具自有晶圓與封裝能力，PDF 指出部分產品已調價。"], ["3675", "德微", "TVS / 二極體", "持續擴充 TVS 相關產能，並可透過母公司 Diodes 的全球客戶與供應鏈承接轉單。"], ["8261", "富鼎", "Power MOSFET", "已有多項產品可對標 Infineon，具切入 AI Server 電源供應鏈機會。"], ["6719", "力智", "PMIC / DrMOS", "台系少數已推出 DrMOS 的供應商，可受惠國際 IDM 產能吃緊與第二供應商需求。"], ["", "立錡", "PMIC / DrMOS", "PDF 提及已推出 DrMOS；公司現已非獨立上市櫃標的，因此不抓投信資料。"], ["6138", "茂達", "PMIC / DrMOS", "已布局 DrMOS，但 PDF 指出仍處於產品開發與驗證階段。"], ["6415", "矽力-KY", "PMIC / DrMOS", "已布局 DrMOS，未來若驗證通過具替代供應機會。"], ["", "博盛", "中低壓 MOSFET", "PDF 指出台系 ODM 已開始尋求本土替代料，具潛在導入機會。"]]}];
+let inst=window.INSTITUTIONAL_DATA || {stocks:{}}, selected=industries[0].id;
+const $=id=>document.getElementById(id), nav=$("nav"),grid=$("grid"),hero=$("hero"),search=$("search"),sort=$("sort"),status=$("status"),empty=$("empty");
+const nf=new Intl.NumberFormat("zh-TW",{maximumFractionDigits:0});
+function fmt(v){ if(v===null||v===undefined) return "—"; const c=v>0?"buy":v<0?"sell":"neutral"; return `<span class="${c}">${v>0?"+":""}${nf.format(v)}</span>`; }
+function metric(label,v){return `<div class="metric"><div class="mlabel">${label}</div><div class="mval">${fmt(v)}</div></div>`}
+function getStats(code){return (code&&inst.stocks)?inst.stocks[code]:null}
+function navRender(){nav.innerHTML="";industries.forEach(ind=>{const b=document.createElement("button");b.className="navbtn"+(ind.id===selected?" active":"");b.type="button";b.innerHTML=`<span>${ind.icon} ${ind.name}</span><small>${ind.stocks.length}</small>`;b.onclick=()=>{selected=ind.id;render()};nav.appendChild(b)})}
+function card(ind,s){const [code,name,role,adv]=s,st=getStats(code);const el=document.createElement("article");el.className="card";let trend="";if(st){ if(st.consecutive_buy_days>=2) trend=`投信連買 ${st.consecutive_buy_days} 日`; else if(st.consecutive_sell_days>=2) trend=`投信連賣 ${st.consecutive_sell_days} 日`; else trend=`最新交易日：${st.date||"—"}`; } else trend=code?"投信資料尚未累積":"非台灣上市櫃 / 無追蹤代號";
+el.innerHTML=`<div class="top"><div><div class="name">${name} ${code?`<span class="code">${code}</span>`:""}</div><div class="role">${role}</div></div></div><div class="adv"><strong>優勢：</strong>${adv}</div><div class="chips">${metric("今日",st?.d1)}${metric("近 5 日",st?.d5)}${metric("近 20 日",st?.d20)}</div><div class="trend">${trend}</div>`;return el}
+function render(){navRender();const q=search.value.trim().toLowerCase(),sortBy=sort.value;let pool=[];if(q){hero.style.display="none";industries.forEach(ind=>ind.stocks.forEach(s=>{const h=`${ind.name} ${ind.summary} ${ind.catalyst} ${s.join(" ")}`.toLowerCase();if(h.includes(q))pool.push([ind,s])}))}else{const ind=industries.find(x=>x.id===selected);hero.style.display="";hero.innerHTML=`<h2>${ind.icon} ${ind.name}</h2><p>${ind.summary}</p><div class="cat"><strong>主要催化劑：</strong>${ind.catalyst}</div>`;pool=ind.stocks.map(s=>[ind,s])}
+if(sortBy!=="default"){pool.sort((a,b)=>{const av=getStats(a[1][0])?.[sortBy]??-1e18,bv=getStats(b[1][0])?.[sortBy]??-1e18;return bv-av})}
+grid.innerHTML="";pool.forEach(([ind,s])=>grid.appendChild(card(ind,s)));empty.style.display=pool.length?"none":"block"}
+function loadInst(){
+  inst = window.INSTITUTIONAL_DATA || {stocks:{}};
+  if(inst.as_of){
+    status.textContent=`投信資料最新交易日：${inst.as_of}｜自動更新時間：${inst.generated_at||"—"}`;
+  }else{
+    status.textContent=inst.note||"尚無投信資料，請先執行更新排程。";
+  }
+  render();
+}
+search.addEventListener("input",render);sort.addEventListener("change",render);render();loadInst();
+</script>
+</body></html>
