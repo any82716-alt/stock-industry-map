@@ -29,14 +29,14 @@ nav{background:#fff;border:1px solid var(--border);border-radius:15px;padding:9p
 </style>
 </head>
 <body>
-<header><div class="wrap"><h1>AI 產業鏈股票地圖</h1><p>產業基本面 × 每日投信籌碼。投信資料由網站排程更新，數值以「張」顯示。</p></div></header>
+<header><div class="wrap"><h1>AI 產業鏈股票地圖</h1><p>產業基本面 × 每日投信籌碼。投信資料由網站排程更新；5日與20日皆由最新交易日往前計算實際交易日，數值以「張」顯示。</p></div></header>
 <div class="toolbar">
 <input id="search" type="search" placeholder="搜尋：強茂、MOSFET、CoWoS、MLCC…">
 <select id="sort">
 <option value="default">原產業順序</option>
 <option value="d1">今日投信買超</option>
-<option value="d5">近 5 日投信買超</option>
-<option value="d20">近 20 日投信買超</option>
+<option value="d5">近 5 交易日投信買超</option>
+<option value="d20">近 20 交易日投信買超</option>
 </select>
 </div>
 <div class="status" id="status">投信資料載入中…</div>
@@ -53,7 +53,7 @@ function metric(label,v){return `<div class="metric"><div class="mlabel">${label
 function getStats(code){return (code&&inst.stocks)?inst.stocks[code]:null}
 function navRender(){nav.innerHTML="";industries.forEach(ind=>{const b=document.createElement("button");b.className="navbtn"+(ind.id===selected?" active":"");b.type="button";b.innerHTML=`<span>${ind.icon} ${ind.name}</span><small>${ind.stocks.length}</small>`;b.onclick=()=>{selected=ind.id;render()};nav.appendChild(b)})}
 function card(ind,s){const [code,name,role,adv]=s,st=getStats(code);const el=document.createElement("article");el.className="card";let trend="";if(st){ if(st.consecutive_buy_days>=2) trend=`投信連買 ${st.consecutive_buy_days} 日`; else if(st.consecutive_sell_days>=2) trend=`投信連賣 ${st.consecutive_sell_days} 日`; else trend=`最新交易日：${st.date||"—"}`; } else trend=code?"投信資料尚未累積":"非台灣上市櫃 / 無追蹤代號";
-el.innerHTML=`<div class="top"><div><div class="name">${name} ${code?`<span class="code">${code}</span>`:""}</div><div class="role">${role}</div></div></div><div class="adv"><strong>優勢：</strong>${adv}</div><div class="chips">${metric("今日",st?.d1)}${metric("近 5 日",st?.d5)}${metric("近 20 日",st?.d20)}</div><div class="trend">${trend}</div>`;return el}
+el.innerHTML=`<div class="top"><div><div class="name">${name} ${code?`<span class="code">${code}</span>`:""}</div><div class="role">${role}</div></div></div><div class="adv"><strong>優勢：</strong>${adv}</div><div class="chips">${metric("今日",st?.d1)}${metric(st?.d5_days===5?"近 5 交易日":`近5日 (${st?.d5_days||0}/5)`,st?.d5)}${metric(st?.d20_days===20?"近 20 交易日":`近20日 (${st?.d20_days||0}/20)`,st?.d20)}</div><div class="trend">${trend}</div>`;return el}
 function render(){navRender();const q=search.value.trim().toLowerCase(),sortBy=sort.value;let pool=[];if(q){hero.style.display="none";industries.forEach(ind=>ind.stocks.forEach(s=>{const h=`${ind.name} ${ind.summary} ${ind.catalyst} ${s.join(" ")}`.toLowerCase();if(h.includes(q))pool.push([ind,s])}))}else{const ind=industries.find(x=>x.id===selected);hero.style.display="";hero.innerHTML=`<h2>${ind.icon} ${ind.name}</h2><p>${ind.summary}</p><div class="cat"><strong>主要催化劑：</strong>${ind.catalyst}</div>`;pool=ind.stocks.map(s=>[ind,s])}
 if(sortBy!=="default"){pool.sort((a,b)=>{const av=getStats(a[1][0])?.[sortBy]??-1e18,bv=getStats(b[1][0])?.[sortBy]??-1e18;return bv-av})}
 grid.innerHTML="";pool.forEach(([ind,s])=>grid.appendChild(card(ind,s)));empty.style.display=pool.length?"none":"block"}
