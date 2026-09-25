@@ -1,6 +1,6 @@
 window.INSTITUTIONAL_DATA = {
   "as_of": "2026-09-24",
-  "generated_at": "2026-09-24 18:37:47 +08:00",
+  "generated_at": "2026-09-25 18:37:48 +08:00",
   "note": "今日=最新交易日；近5日/20日=由最新交易日往前加總最近5/20個實際交易日，休市日自動略過。",
   "stocks": {
     "6944": {
@@ -375,12 +375,12 @@ window.INSTITUTIONAL_DATA = {
       "name": "台達電",
       "industry": "AI Server 零組件",
       "date": "2026-09-24",
-      "d1": 430.0,
-      "d5": 5655.5,
-      "d20": 936.7,
-      "d1_shares": 430000,
-      "d5_shares": 5655474,
-      "d20_shares": 936689,
+      "d1": 420.0,
+      "d5": 5645.5,
+      "d20": 926.7,
+      "d1_shares": 420000,
+      "d5_shares": 5645474,
+      "d20_shares": 926689,
       "d5_days": 5,
       "d20_days": 20,
       "days_available": 20,
