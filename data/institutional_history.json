@@ -1,5 +1,301 @@
 {
   "days": {
+    "2026-10-14": {
+      "6944": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "6196": {
+        "net_shares": 1000,
+        "buy_shares": 1000,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "6139": {
+        "net_shares": -6000,
+        "buy_shares": 1000,
+        "sell_shares": 7000,
+        "market": "TWSE"
+      },
+      "6691": {
+        "net_shares": 10000,
+        "buy_shares": 13000,
+        "sell_shares": 3000,
+        "market": "TWSE"
+      },
+      "3583": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "2467": {
+        "net_shares": -29000,
+        "buy_shares": 1000,
+        "sell_shares": 30000,
+        "market": "TWSE"
+      },
+      "6937": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "2464": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "3563": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "2493": {
+        "net_shares": -3000,
+        "buy_shares": 0,
+        "sell_shares": 3000,
+        "market": "TWSE"
+      },
+      "8021": {
+        "net_shares": 69000,
+        "buy_shares": 88000,
+        "sell_shares": 19000,
+        "market": "TWSE"
+      },
+      "3167": {
+        "net_shares": 205000,
+        "buy_shares": 205000,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "3055": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "3037": {
+        "net_shares": 30461,
+        "buy_shares": 569700,
+        "sell_shares": 539239,
+        "market": "TWSE"
+      },
+      "3189": {
+        "net_shares": 839000,
+        "buy_shares": 1441000,
+        "sell_shares": 602000,
+        "market": "TWSE"
+      },
+      "4958": {
+        "net_shares": 262857,
+        "buy_shares": 489000,
+        "sell_shares": 226143,
+        "market": "TWSE"
+      },
+      "2368": {
+        "net_shares": 3725437,
+        "buy_shares": 3726500,
+        "sell_shares": 1063,
+        "market": "TWSE"
+      },
+      "2308": {
+        "net_shares": -175751,
+        "buy_shares": 354600,
+        "sell_shares": 530351,
+        "market": "TWSE"
+      },
+      "6781": {
+        "net_shares": -17000,
+        "buy_shares": 0,
+        "sell_shares": 17000,
+        "market": "TWSE"
+      },
+      "6715": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "2455": {
+        "net_shares": -189000,
+        "buy_shares": 4000,
+        "sell_shares": 193000,
+        "market": "TWSE"
+      },
+      "2345": {
+        "net_shares": 413910,
+        "buy_shares": 415000,
+        "sell_shares": 1090,
+        "market": "TWSE"
+      },
+      "6285": {
+        "net_shares": 6000,
+        "buy_shares": 6000,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "2327": {
+        "net_shares": 1147714,
+        "buy_shares": 1342000,
+        "sell_shares": 194286,
+        "market": "TWSE"
+      },
+      "2492": {
+        "net_shares": -10000,
+        "buy_shares": 1000,
+        "sell_shares": 11000,
+        "market": "TWSE"
+      },
+      "3026": {
+        "net_shares": 329000,
+        "buy_shares": 333000,
+        "sell_shares": 4000,
+        "market": "TWSE"
+      },
+      "2472": {
+        "net_shares": -160000,
+        "buy_shares": 0,
+        "sell_shares": 160000,
+        "market": "TWSE"
+      },
+      "6449": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "2481": {
+        "net_shares": -799000,
+        "buy_shares": 1000,
+        "sell_shares": 800000,
+        "market": "TWSE"
+      },
+      "8261": {
+        "net_shares": -3000,
+        "buy_shares": 0,
+        "sell_shares": 3000,
+        "market": "TWSE"
+      },
+      "6719": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "6415": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TWSE"
+      },
+      "3131": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "6640": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "6187": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "3455": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "6664": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "8027": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "3211": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "4931": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "3081": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "4991": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "3105": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "4971": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "3357": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "8042": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "5425": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "3675": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      },
+      "6138": {
+        "net_shares": 0,
+        "buy_shares": 0,
+        "sell_shares": 0,
+        "market": "TPEx"
+      }
+    },
     "2026-10-13": {
       "6944": {
         "net_shares": 0,
@@ -192,108 +488,6 @@
         "buy_shares": 48000,
         "sell_shares": 18000,
         "market": "TWSE"
-      },
-      "3131": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "6640": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "6187": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "3455": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "6664": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "8027": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "3211": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "4931": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "3081": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "4991": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "3105": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "4971": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "3357": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "8042": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "5425": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "3675": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
-      },
-      "6138": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TPEx"
       }
     },
     "2026-10-12": {
@@ -3785,200 +3979,6 @@
         "net_shares": 4230,
         "buy_shares": 4230,
         "sell_shares": 0,
-        "market": "TWSE"
-      }
-    },
-    "2026-09-11": {
-      "6944": {
-        "net_shares": 919,
-        "buy_shares": 919,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "6196": {
-        "net_shares": 26000,
-        "buy_shares": 26000,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "6139": {
-        "net_shares": -101000,
-        "buy_shares": 0,
-        "sell_shares": 101000,
-        "market": "TWSE"
-      },
-      "6691": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "3583": {
-        "net_shares": -37000,
-        "buy_shares": 0,
-        "sell_shares": 37000,
-        "market": "TWSE"
-      },
-      "2467": {
-        "net_shares": -1000,
-        "buy_shares": 0,
-        "sell_shares": 1000,
-        "market": "TWSE"
-      },
-      "6937": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "2464": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "3563": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "2493": {
-        "net_shares": -35000,
-        "buy_shares": 0,
-        "sell_shares": 35000,
-        "market": "TWSE"
-      },
-      "8021": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "3167": {
-        "net_shares": 154000,
-        "buy_shares": 154000,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "3055": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "3037": {
-        "net_shares": 456775,
-        "buy_shares": 601775,
-        "sell_shares": 145000,
-        "market": "TWSE"
-      },
-      "3189": {
-        "net_shares": 160000,
-        "buy_shares": 221000,
-        "sell_shares": 61000,
-        "market": "TWSE"
-      },
-      "4958": {
-        "net_shares": 125,
-        "buy_shares": 22000,
-        "sell_shares": 21875,
-        "market": "TWSE"
-      },
-      "2368": {
-        "net_shares": -1072045,
-        "buy_shares": 51000,
-        "sell_shares": 1123045,
-        "market": "TWSE"
-      },
-      "2308": {
-        "net_shares": -535404,
-        "buy_shares": 67818,
-        "sell_shares": 603222,
-        "market": "TWSE"
-      },
-      "6781": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "6715": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "2455": {
-        "net_shares": -15000,
-        "buy_shares": 0,
-        "sell_shares": 15000,
-        "market": "TWSE"
-      },
-      "2345": {
-        "net_shares": -651700,
-        "buy_shares": 41300,
-        "sell_shares": 693000,
-        "market": "TWSE"
-      },
-      "6285": {
-        "net_shares": -3485,
-        "buy_shares": 30000,
-        "sell_shares": 33485,
-        "market": "TWSE"
-      },
-      "2327": {
-        "net_shares": 565106,
-        "buy_shares": 640500,
-        "sell_shares": 75394,
-        "market": "TWSE"
-      },
-      "2492": {
-        "net_shares": 75000,
-        "buy_shares": 80000,
-        "sell_shares": 5000,
-        "market": "TWSE"
-      },
-      "3026": {
-        "net_shares": 757500,
-        "buy_shares": 758500,
-        "sell_shares": 1000,
-        "market": "TWSE"
-      },
-      "2472": {
-        "net_shares": -430000,
-        "buy_shares": 70000,
-        "sell_shares": 500000,
-        "market": "TWSE"
-      },
-      "6449": {
-        "net_shares": -500000,
-        "buy_shares": 0,
-        "sell_shares": 500000,
-        "market": "TWSE"
-      },
-      "2481": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "8261": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "6719": {
-        "net_shares": 0,
-        "buy_shares": 0,
-        "sell_shares": 0,
-        "market": "TWSE"
-      },
-      "6415": {
-        "net_shares": -8000,
-        "buy_shares": 0,
-        "sell_shares": 8000,
         "market": "TWSE"
       }
     }
